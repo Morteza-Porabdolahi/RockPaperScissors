@@ -41,6 +41,20 @@ img {
 }
 
 @media only screen and (min-width : 820px) {
+    @keyframes opacityAnimation {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
     .app {
         max-width: 26rem;
     }
@@ -55,6 +69,7 @@ img {
     }
 
     .rules-modal {
+        animation: opacityAnimation .3s;
         background-color: rgba(0, 0, 0, .7);
     }
 
