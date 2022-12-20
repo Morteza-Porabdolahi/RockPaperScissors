@@ -34,24 +34,42 @@
                 </div>
                 <div class="rectangle__score">
                     <p class="score__text">SCORE</p>
-                    <span class="score__number">12</span>
+                    <p class="score__number">0</p>
                 </div>
             </div>
         </header>
         <main class="main">
-            <div class="main__container">
+            <div class="main__container active">
                 <div class="hands">
                     <div class="first-row">
-                        <div class="hand paper-hand">
+                        <div class="hand paper-hand" data-id="paper-hand">
                             <img src="./assets/images/icon-paper.svg" class="paper-img" alt="Paper Image">
                         </div>
-                        <div class="hand scissors-hand">
+                        <div class="hand scissors-hand" data-id="scissors-hand">
                             <img src="./assets/images/icon-scissors.svg" class="scissors-img" alt="Scissors Image">
                         </div>
                     </div>
                     <div class="second-row">
-                        <div class="hand rock-hand">
+                        <div class="hand rock-hand" data-id="rock-hand">
                             <img src="./assets/images/icon-rock.svg" class="rock-img" alt="Rock Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="game__container">
+                <div class="hands">
+                    <div class="first-row">
+                        <div class="hand-container">
+                            <div class="hand">
+                                <!-- <img src="./assets/images/icon-paper.svg" class="paper-img" alt="Paper Image"> -->
+                            </div>
+                            <p class="hand-description">YOU PICKED</p>
+                        </div>
+                        <div class="hand-container">
+                            <div class="hand">
+                                <!-- <img src="./assets/images/icon-paper.svg" class="paper-img" alt="Paper Image"> -->
+                            </div>
+                            <p class="hand-description">COMPUTER PICKED</p>
                         </div>
                     </div>
                 </div>
@@ -67,5 +85,6 @@
 </body>
 
 <script src="./assets/js/modal.js"></script>
+<script src="./assets/js/script.js"></script>
 
 </html>
