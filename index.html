@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/reset.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+    <section class="app">
+        <div class="rules-modal hidden">
+            <div class="modal">
+                <div class="modal__header">
+                    <h2 class="header__title">RULES</h2>
+                    <p class="header__times times">&times;</p>
+                </div>
+                <div class="modal__body">
+                    <img src="./assets/images/image-rules.svg" alt="Game Rules Image" class="rules-img">
+                </div>
+                <div class="modal__footer">
+                    <p class="footer__times times">&times;</p>
+                </div>
+            </div>
+        </div>
+        <header class="header">
+            <div class="header__rectangle">
+                <div class="rectangle__logo">
+                    <img src="./assets/images/logo.svg" alt="Rock Paper Scissors Logo" class="logo__image">
+                </div>
+                <div class="rectangle__score">
+                    <p class="score__text">SCORE</p>
+                    <span class="score__number">12</span>
+                </div>
+            </div>
+        </header>
+        <main class="main">
+            <div class="main__container">
+                <div class="hands">
+                    <div class="first-row">
+                        <div class="hand paper-hand">
+                            <img src="./assets/images/icon-paper.svg" class="paper-img" alt="Paper Image">
+                        </div>
+                        <div class="hand scissors-hand">
+                            <img src="./assets/images/icon-scissors.svg" class="scissors-img" alt="Scissors Image">
+                        </div>
+                    </div>
+                    <div class="second-row">
+                        <div class="hand rock-hand">
+                            <img src="./assets/images/icon-rock.svg" class="rock-img" alt="Rock Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <div class="footer__container">
+                <button class="rules-btn">RULES</button>
+            </div>
+        </footer>
+    </section>
+
+</body>
+
+</html>
