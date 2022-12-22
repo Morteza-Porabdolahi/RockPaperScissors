@@ -72,6 +72,30 @@
     background-color: rgba(0, 0, 0, .2);
 }
 
+.game__container {
+    text-align: center;
+}
+
+.result {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.restart-btn {
+    color: #575864;
+    border-radius: .2rem;
+    padding: .7rem 2.5rem;
+    border: none;
+    margin-top: .5rem;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .4);
+    cursor: pointer;
+}
+
+.hands {
+    margin-bottom: 2rem;
+}
+
 .active {
     display: block;
 }
