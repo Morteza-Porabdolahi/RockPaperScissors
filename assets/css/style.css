@@ -7,12 +7,23 @@
     padding: 1rem;
 }
 
+@keyframes opacityAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .main__container {
     background-image: url(../images/bg-triangle.svg);
     background-size: 100% 80%;
     background-position: 0 40px;
     background-repeat: no-repeat;
     display: none;
+    animation: opacityAnimation .3s;
 }
 
 .logo__image {
@@ -41,6 +52,11 @@
 .score__number,
 .score__text {
     font-weight: bold;
+}
+
+.result-container {
+    display: none;
+    animation: opacityAnimation .3s;
 }
 
 .hands {
@@ -74,6 +90,7 @@
 
 .game__container {
     text-align: center;
+    animation: opacityAnimation .3s;
 }
 
 .result {

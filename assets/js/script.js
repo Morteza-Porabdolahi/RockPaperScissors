@@ -3,6 +3,8 @@ const playerPickedHandElem = $.querySelector('.game__container .hand:first-child
 const mainContainer = $.querySelector('.main__container');
 const restartBtn = $.querySelector('.restart-btn');
 const resultElem = $.querySelector('.result');
+const resultContaienr = $.getElementById('result-container');
+const playerScore = $.querySelector('.score__number');
 
 let playerPick;
 let computerPick;
@@ -36,23 +38,42 @@ function pickARandomHand() {
 
     computerPick = randomHand;
 
-    computerPickedHandElem.className = `hand ${computerPick}-hand`;
-    computerPickedHandElem.style.backgroundColor = '#fff';
+    resetImagesAndTexts(computerPickedHandElem);
 
-    pickedHandElementImage.src = `./assets/images/icon-${randomHand}.svg`;
-    pickedHandElementImage.className = `${randomHand}-img`;
-    pickedHandElementImage.alt = `${randomHand} Image`;
+    setTimeout(() => {
+        computerPickedHandElem.className = `hand ${computerPick}-hand`;
+        computerPickedHandElem.style.backgroundColor = '#fff';
 
-    chooseTheWinner();
+        pickedHandElementImage.src = `./assets/images/icon-${randomHand}.svg`;
+        pickedHandElementImage.className = `${randomHand}-img`;
+        pickedHandElementImage.alt = `${randomHand} Image`;
+
+        chooseTheWinner();
+    }, 1500);
+}
+
+function resetImagesAndTexts(computerPickedHandElem) {
+    const computerPickedHandElemImage = computerPickedHandElem.firstElementChild;
+
+    computerPickedHandElem.className = `hand`;
+    computerPickedHandElem.style.backgroundColor = '';
+    computerPickedHandElemImage.src = '';
+    computerPickedHandElemImage.alt = '';
+
+    resultContaienr.classList.remove('active');
 }
 
 function chooseTheWinner() {
+    resultContaienr.classList.add('active');
+
     if (playerPick === computerPick) {
         resultElem.innerHTML = 'TIE !';
     } else if ((playerPick === 'paper' && computerPick === 'rock') || (playerPick === 'scissors' && computerPick === 'paper') || (playerPick === 'rock' && computerPick === 'scissors')) {
         resultElem.innerHTML = 'YOU <span style="color : #00c203;">WIN !</span>';
+        playerScore.textContent++;
     } else if ((playerPick === 'paper' && computerPick === 'scissors') || (playerPick === 'rock' && computerPick === 'paper') || (playerPick === 'scissors' && computerPick === 'rock')) {
         resultElem.innerHTML = 'YOU <span style="color : #e00404;">LOOSE !</span>';
+        playerScore.textContent--;
     }
 
 }
