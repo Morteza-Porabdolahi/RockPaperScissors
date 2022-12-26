@@ -68,14 +68,38 @@ function chooseTheWinner() {
 
     if (playerPick === computerPick) {
         resultElem.innerHTML = 'TIE !';
-    } else if ((playerPick === 'paper' && computerPick === 'rock') || (playerPick === 'scissors' && computerPick === 'paper') || (playerPick === 'rock' && computerPick === 'scissors')) {
-        resultElem.innerHTML = 'YOU <span style="color : #00c203;">WIN !</span>';
-        playerScore.textContent++;
-    } else if ((playerPick === 'paper' && computerPick === 'scissors') || (playerPick === 'rock' && computerPick === 'paper') || (playerPick === 'scissors' && computerPick === 'rock')) {
-        resultElem.innerHTML = 'YOU <span style="color : #e00404;">LOOSE !</span>';
-        playerScore.textContent--;
+    } else {
+        switch (true) {
+            case (playerPick === 'paper' && computerPick === 'rock'): {
+                winTheGame();
+                break;
+            }
+            case (playerPick === 'rock' && computerPick === 'scissors'): {
+                winTheGame();
+                break;
+            }
+            case (playerPick === 'scissors' && computerPick === 'paper'): {
+                winTheGame();
+                break;
+            }
+            default: {
+                looseTheGame();
+                break;
+            }
+
+        }
     }
 
+}
+
+function looseTheGame() {
+    resultElem.innerHTML = 'YOU <span style="color : #e00404;">LOOSE !</span>';
+    playerScore.textContent--;
+}
+
+function winTheGame() {
+    resultElem.innerHTML = 'YOU <span style="color : #00c203;">WIN !</span>';
+    playerScore.textContent++;
 }
 
 function restartGame() {
